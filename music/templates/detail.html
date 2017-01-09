@@ -1,3 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}Album details BC!{% endblock %}
+{% block body %}
+
+
 {% load static %}
 <img src="{{ album.album_logo }}">
 
@@ -15,9 +20,11 @@
         <label for="song{{ forloop.counter }}">
             {{ song.song_title }}
             {% if song.is_favorite %}
-                <img src="{% static '1483748806_star.png'%}">
+                <img src="{% static 'music/images/star.png'%}">
             {% endif %}
         </label><br>
     {% endfor %}
     <input type="submit" value="Favorite">
 </form>
+{% endblock %}
+
